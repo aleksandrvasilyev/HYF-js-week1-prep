@@ -2,9 +2,12 @@ import { modules, students, mentors, classes } from "./hyf.js";
 
 const getPeopleOfClass = (className) => {
   const classStudents = students
-    .filter((student) => student.class === className)
+    .filter(
+      (student) => student.class === className && student.graduated === false
+    )
     .map((student) => ({ name: student.name, role: "student" }));
 
+  // console.log(classStudents);
   const classModule = classes.find(
     (currentClass) => currentClass.name === className
   ).currentModule;
@@ -15,7 +18,7 @@ const getPeopleOfClass = (className) => {
 
   return classStudents.concat(classMentors);
 };
-console.table(getPeopleOfClass("class35"));
+console.table(getPeopleOfClass("class34"));
 
 const getActiveClasses = () => {
   const activeClasses = classes

@@ -6,7 +6,7 @@ const possibleMentorsForModule = (moduleName) => {
     .map((mentor) => mentor.name);
 };
 
-console.log(possibleMentorsForModule("using-apis"));
+console.log(possibleMentorsForModule("javascript"));
 
 const findMentorForModule = (moduleName) => {
   const moduleMentors = possibleMentorsForModule(moduleName);
